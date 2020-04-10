@@ -1,0 +1,57 @@
+<br>
+<div class="card  "  >
+    <div class="card-body"  >
+        <form class="form-inline  text-center " >
+          
+           <p class="h5" >Country Name :  </p>
+         &nbsp;
+             <input class="form-control mr-sm-2" type="search"   [(ngModel)]="country" name="country" placeholder="Search by Country"  >
+             <button (click)="onClick()" class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+
+           
+          </form>
+   
+    </div>
+
+<br><br>
+   
+<div class="card" *ngIf="particularCountryData?.country " >
+  
+    <h1 class="card-header" *ngIf="particularCountryData?.country " >
+      <p class="h3">{{particularCountryData.country}}</p>
+    </h1>
+    
+    <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Cases</th>
+            <th scope="col">Today Cases</th>
+            <th scope="col">Deaths</th>
+            <th scope="col">Today Deaths</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Active</th>
+            <th scope="col">Critical</th>
+            <th scope="col">Cases Per One Million</th>
+            <th scope="col">Deaths Per One Million</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{particularCountryData.cases}}</td>
+             <td>{{particularCountryData.todayCases}}</td>
+            <td>{{particularCountryData.deaths}}</td>
+            <td>{{particularCountryData.todayDeaths}}</td>
+            <td>{{particularCountryData.recovered}}</td>
+            <td>{{particularCountryData.active}}</td>
+            <td>{{particularCountryData.critical}}</td>
+            <td>{{particularCountryData.casesPerOneMillion}}</td>
+            <td>{{particularCountryData.deathsPerOneMillion}}</td> 
+
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+ 
+
